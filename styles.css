@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  /* Primary Color */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  /* Neutral Color */
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+  --bg-body: hsl(0, 0%, 98%);
+
+  /* Typography */
+  --font-main: "Poppins", sans-serif;
+  --fs-body: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- 1. Định nghĩa màu cho Dark Mode (Thêm vào cuối file CSS của mày) --- */
+body.dark-theme {
+  --bg-body: hsl(234, 12%, 8%); /* Màu nền tối */
+  --white: hsl(234, 12%, 15%); /* Màu card tối */
+  --grey-500: hsl(0, 0%, 100%); /* Chữ tiêu đề trắng */
+  --grey-400: hsl(234, 12%, 70%); /* Chữ đoạn văn xám nhạt */
+  /* Cái box-shadow cũng nên chỉnh nhẹ lại cho hợp nền tối */
+}
+
+/* --- 2. CSS cho cái nút công tắc (Switch) --- */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Đẩy sang góc phải */
+  width: 100%;
+  max-width: 1110px; /* Bằng chiều rộng container chính */
+  margin: 20px auto 0; /* Cách trên 20px, căn giữa */
+  padding-right: 2rem; /* Thụt vào ti cho đẹp */
+}
+
+.theme-text {
+  margin-right: 10px;
+  font-size: 0.85rem;
+  color: var(--grey-400); /* Chữ tự đổi màu theo theme */
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 48px;
+}
+
+.theme-switch input {
+  display: none; /* Giấu cái checkbox mặc định đi */
+}
+
+/* Thằng này là cái nền của công tắc */
+.slider {
+  background-color: hsl(234, 12%, 80%); /* Màu xám khi tắt */
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s; /* Hiệu ứng trượt mượt mà */
+}
+
+/* Thằng này là cái nút tròn di chuyển */
+.slider:before {
+  background-color: var(--white); /* Màu nút tròn */
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 16px;
+}
+
+/* Khi cái checkbox được "tích" (bằng JS) */
+input:checked + .slider {
+  background-color: var(--cyan); /* Đổi nền sang màu xanh Cyan của mày */
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px); /* Đẩy cái nút tròn sang phải */
+}
+
+/* Làm cho cái nút nó tròn trịa */
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--fs-body);
+  background-color: var(--bg-body);
+  color: var(--grey-400);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--grey-500);
+  font-weight: 600;
+}
+
+.container-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 29%;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.h1-header {
+  font-size: 2rem;
+  padding-block-start: 1.5rem;
+  line-height: 1.6rem;
+  color: var(--grey-400);
+  font-weight: 200;
+}
+
+.h2-header {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.p-header {
+  margin-block-start: 0.8rem;
+  font-size: 0.83rem;
+}
+
+.container-main {
+  max-width: 1110px;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 0.45rem;
+  box-shadow: 0 15px 30px -10px rgba(131, 166, 210, 0.5);
+}
+
+.container-x2 {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 2.5rem;
+}
+
+.container-supervisor {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  border-top: 0.2rem solid var(--cyan);
+}
+
+.container-builder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-size: 0.8rem;
+  border-top: 0.2rem solid var(--red);
+}
+
+.container-karma {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-size: 0.8rem;
+  border-top: 0.2rem solid var(--orange);
+}
+
+.container-calculator {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+  font-size: 0.8rem;
+  border-top: 0.2rem solid var(--blue);
+}
+
+img {
+  width: 17%;
+  padding-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+}
+
+a {
+  color: bisque;
+}
+
+a:hover {
+  color: blue;
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    flex-direction: column;
+  }
+
+  .container-header {
+    max-width: 60%;
+  }
+}

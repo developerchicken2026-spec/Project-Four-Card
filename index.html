@@ -1,45 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Four card feature section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
-
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
-
-  Supervisor
-  Monitors activity to identify project roadblocks
-
-  Team Builder
-  Scans our talent network to create the optimal team for your project
-
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Four card feature section</title>
+  </head>
+  <body>
+    <div class="theme-switch-wrapper">
+      <span class="theme-text">Dark Mode</span>
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
+    <header class="container-header">
+      <h1 class="h1-header">Reliable, efficient delivery</h1>
+      <h2 class="h2-header">Powered by Technology</h2>
+      <p class="p-header">
+        Our Artificial Intelligence powered tools use millions of project data
+        points to ensure that your project is successful
+      </p>
+    </header>
+    <main class="container-main">
+      <div class="container-supervisor card">
+        <h2 class="h2-supervisor">Supervisor</h2>
+        <p class="p-supervisor">
+          Monitors activity to identify project roadblocks
+        </p>
+        <img
+          class="img-supervisor"
+          src="./images/icon-supervisor.svg"
+          alt="icon Supervisor"
+        />
+      </div>
+      <div class="container-x2">
+        <div class="container-builder card">
+          <h2 class="h2-builder">Team Builder</h2>
+          <p class="p-builder">
+            Scans our talent network to create the optimal team for your project
+          </p>
+          <img
+            class="img-builder"
+            src="./images/icon-team-builder.svg"
+            alt="Icon builder"
+          />
+        </div>
+        <div class="container-karma card">
+          <h2 class="h2-karma">Karma</h2>
+          <p class="p-karma">
+            Regularly evaluates our talent to ensure quality
+          </p>
+          <img
+            class="img-karma"
+            src="./images/icon-karma.svg"
+            alt="Icon Karma"
+          />
+        </div>
+      </div>
+      <div class="container-calculator card">
+        <h2 class="h2-calculator">Calculator</h2>
+        <p class="p-calculator">
+          Uses data from past projects to provide better delivery estimates
+        </p>
+        <img
+          class="img-calculator"
+          src="./images/icon-calculator.svg"
+          alt="Icon Calculator"
+        />
+      </div>
+    </main>
+    <footer>
+      <a href="https://github.com">Developerchicken2026</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
